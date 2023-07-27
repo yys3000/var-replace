@@ -1,0 +1,15 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-job1:
+    runs-on: self-hosted
+    steps:
+      - name: checkout the code
+        uses: actions/checkout@v3
+        
+      - name: Cat new file
+        run: cat values-DEV.yaml.new
